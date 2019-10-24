@@ -3,6 +3,8 @@ Construct an IT Job website with `SpringBoot` and `MongoDB`.
 
 Author: Dr. Yuhang Zhao
 
+[![PyPI license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
+[![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 ### What is MongoDB?
 MongoDB is `document-DB`. 
@@ -24,11 +26,23 @@ Solution: see "How to Install MongoDB on Windows 10"
 Then it will start MongoDB main process 
 and then keep waiting for connections message in the console.
 
-### Add mongoDB/bin to Path
-Therefore we can use `Mongo Shell` and `Mongo Server` from anywhere.
+### Register MongoDB
+Add `mongoDB/bin` to `Path` and we can use `Mongo Shell` and `Mongo Server` from anywhere.
 
 ### Construct the app using MongoDB with CRUD functionality through RESTful APIs. 
 
-#### 1. controller
-Create a controller used in RESTful web services to handle HTTP requests.
-Annotated by `@RestController`.
+### Screenshot
+![Architecture](https://github.com/yuhang2685/ITJobWebsite-SpringBoot-MongoDB/blob/master/ApplicationLayers.png)
+
+- Create a `controller` used in `RESTful` web services to handle `HTTP` requests and annotated by `@RestController`.
+
+- Create a `service` annotated by `@Service`, which writes business logic in the service layer separated from @RestController.
+
+- Create the `entity` class for job posting and annotated by `@Document`.
+Ref: https://schema.org/JobPosting
+
+- Create the interface `repository` which extends `MongoRepository` using
+the entity class and its `Id` type. 
+
+- Use `dependency injection` annotated by `@Autowired` for the repository in service,
+similarly for service in controller. 
