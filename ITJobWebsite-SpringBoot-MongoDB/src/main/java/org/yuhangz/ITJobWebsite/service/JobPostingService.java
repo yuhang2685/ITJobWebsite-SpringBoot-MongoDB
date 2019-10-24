@@ -13,8 +13,11 @@ public class JobPostingService {
 	@Autowired
     private JobPostingRepository repo;
 	
-	public Collection<JobPosting> getJobPostings(){
-		
+	public Collection<JobPosting> getAllJobPostings(){		
 		return repo.findAll();
 	} 
+	
+	public JobPosting createJobPosting(JobPosting jp) {        
+		return repo.insert(jp);
+    }
 }

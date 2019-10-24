@@ -4,6 +4,8 @@ import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.yuhangz.ITJobWebsite.models.JobPosting;
@@ -18,7 +20,11 @@ public class JobPostingController {
 	
 	@GetMapping
 	public Collection<JobPosting> getAllJobPostings() {
-		//return "Hello World!";
-		return jpService.getJobPostings();
+		return jpService.getAllJobPostings();
 	}
+	
+    @PostMapping
+    public JobPosting postBook(@RequestBody JobPosting jp) {
+        return jpService.createJobPosting(jp);
+    }
 }
