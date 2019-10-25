@@ -17,15 +17,14 @@ public class JobPosting {
 	private String datePosted;
 	
 	private String jobDescribtions;
-	private String responsibilities;
-	private String qualifications;
-	private String skills;
-	private String niceToHave;
+	private String[] responsibilities;
+	private String[] qualifications;
+	private String[] skills;
+	private String[] niceToHave;
 	private String salary;
-	private String jobBenefits;
+	private String[] jobBenefits;
 	private String workHours;
 	private String url;
-	
 	public Integer getId() {
 		return id;
 	}
@@ -80,28 +79,28 @@ public class JobPosting {
 	public void setJobDescribtions(String jobDescribtions) {
 		this.jobDescribtions = jobDescribtions;
 	}
-	public String getResponsibilities() {
+	public String[] getResponsibilities() {
 		return responsibilities;
 	}
-	public void setResponsibilities(String responsibilities) {
+	public void setResponsibilities(String[] responsibilities) {
 		this.responsibilities = responsibilities;
 	}
-	public String getQualifications() {
+	public String[] getQualifications() {
 		return qualifications;
 	}
-	public void setQualifications(String qualifications) {
+	public void setQualifications(String[] qualifications) {
 		this.qualifications = qualifications;
 	}
-	public String getSkills() {
+	public String[] getSkills() {
 		return skills;
 	}
-	public void setSkills(String skills) {
+	public void setSkills(String[] skills) {
 		this.skills = skills;
 	}
-	public String getNiceToHave() {
+	public String[] getNiceToHave() {
 		return niceToHave;
 	}
-	public void setNiceToHave(String niceToHave) {
+	public void setNiceToHave(String[] niceToHave) {
 		this.niceToHave = niceToHave;
 	}
 	public String getSalary() {
@@ -110,10 +109,10 @@ public class JobPosting {
 	public void setSalary(String salary) {
 		this.salary = salary;
 	}
-	public String getJobBenefits() {
+	public String[] getJobBenefits() {
 		return jobBenefits;
 	}
-	public void setJobBenefits(String jobBenefits) {
+	public void setJobBenefits(String[] jobBenefits) {
 		this.jobBenefits = jobBenefits;
 	}
 	public String getWorkHours() {
@@ -128,7 +127,6 @@ public class JobPosting {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-
 	
 	
 }
