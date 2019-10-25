@@ -50,8 +50,13 @@ similarly for service in controller.
 Annotation `@RequestBody` is used to bind the HTTP request body 
 with a domain object in the method parameter. 
 
-So far we have implemented `Create` and `Read` in `CRUD`. We use `PostMan` to test the methods.
+- So far we have implemented `Create` and `Read` in `CRUD`. We use `PostMan` to test the methods.
+
 ![Post](https://github.com/yuhang2685/ITJobWebsite-SpringBoot-MongoDB/blob/master/Post.png)
+
+- Below is what we obtain from Http Get method:
+
+![GetAll](https://github.com/yuhang2685/ITJobWebsite-SpringBoot-MongoDB/blob/master/Get.png)
 
 - Add "spring.data.mongodb.database=JobPostings" in `application.properties`.
 Thereafter, we use the database "JobPostings" to maintain collections which are
