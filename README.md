@@ -31,7 +31,6 @@ Add `mongoDB/bin` to `Path` and we can use `Mongo Shell` and `Mongo Server` from
 
 ### Construct the app using MongoDB with CRUD functionality through RESTful APIs. 
 
-### Screenshot
 ![Architecture](https://github.com/yuhang2685/ITJobWebsite-SpringBoot-MongoDB/blob/master/ApplicationLayers.png)
 
 - Create a `controller` used in `RESTful` web services to handle `HTTP` requests and annotated by `@RestController`.
@@ -46,3 +45,23 @@ the entity class and its `Id` type.
 
 - Use `dependency injection` annotated by `@Autowired` for the repository in service,
 similarly for service in controller. 
+
+- Implement method to create job postings annotated by `@PostMapping`. 
+Annotation `@RequestBody` is used to bind the HTTP request body 
+with a domain object in the method parameter. 
+
+- So far we have implemented `Create` and `Read` in `CRUD`. We use `PostMan` to test the methods.
+
+![Post](https://github.com/yuhang2685/ITJobWebsite-SpringBoot-MongoDB/blob/master/Post.png)
+
+- Below is what we obtain from Http Get method:
+
+![GetAll](https://github.com/yuhang2685/ITJobWebsite-SpringBoot-MongoDB/blob/master/Get.png)
+
+- Add "spring.data.mongodb.database=JobPostings" in `application.properties`.
+Thereafter, we use the database "JobPostings" to maintain collections which are
+corresponding to concept `tables` in `relational DB`.
+
+### Reference:
+- "What is MongoDB? Spring Data MongoDB in Spring Boot Application with Example" by "Tech Primers" @ https://www.youtube.com/watch?v=l5KC6OcbuOI
+- "Spring Boot Tutorial - CRUD Operations using MongoDB" by "Code with Kris" @ https://www.youtube.com/watch?v=WT-2KWCa1l8
