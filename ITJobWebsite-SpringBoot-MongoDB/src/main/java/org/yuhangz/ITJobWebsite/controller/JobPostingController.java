@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.yuhangz.ITJobWebsite.models.JobPosting;
+import org.yuhangz.ITJobWebsite.models.JobPostingNoId;
 import org.yuhangz.ITJobWebsite.service.JobPostingService;
 
 @RestController
@@ -40,4 +42,11 @@ public class JobPostingController {
 	public Optional<JobPosting> deleteJobPostingById(@PathVariable("id") int id) {
 		return jpService.deleteJobPostingById(id);
 	}
+	
+
+    @PutMapping("/{id}")
+    public Optional<JobPosting> updateJobPostingById(@PathVariable("id") int id, 
+    												 @RequestBody JobPostingNoId jpNoId) {
+        return jpService.updateJobPostingById(id, jpNoId);
+    }
 }
